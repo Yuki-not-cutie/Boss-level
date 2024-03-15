@@ -1364,6 +1364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   mySprites: {fileID: 216629610}
+  startDashTime: 0.12
+  dashSpeed: 20.65
 --- !u!4 &574696037
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,7 +1443,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &682940004
 GameObject:
   m_ObjectHideFlags: 0

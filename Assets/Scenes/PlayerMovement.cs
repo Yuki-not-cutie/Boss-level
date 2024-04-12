@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (x != 0 || y != 0)
         {
-            float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg - 90;
             mySprites.transform.rotation = Quaternion.Euler(0, 0, angle);
         }
 

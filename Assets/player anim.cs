@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class playeranim : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public static bool Moving = false;
+public GameObject Playercharachter;
+  
     void Update()
     {
+         if (Input.GetKeyDown(KeyCode.W))
+        {
+            Moving = true;
+        }
+            else
+            {
+                Moving = false;
+            }
+            
         
+       
+                    
     }
 }

@@ -10,8 +10,8 @@ public class boss : MonoBehaviour
     
     public void SetMaxHealth(int health)
     {
-        slider.maxValue = health;
-        slider.value = health;
+        slider.maxValue = 3;
+        slider.value = 3;
     }
 
     public void SetHealth(int health)

@@ -27,7 +27,7 @@ public class bossdmg : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        boss.SetMaxHealth(maxHealth);
+        
     }
     void Update()
     {

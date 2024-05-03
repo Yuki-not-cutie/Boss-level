@@ -11,6 +11,7 @@ public class proj : MonoBehaviour
     public float range;
     public Transform attackPos;
     public LayerMask pplayer;
+    public GameObject PauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class proj : MonoBehaviour
             
                 animasset = true;
                 anim.Play("exxpanding");
+                StartCoroutine(damage());
         }
     }
 
@@ -42,9 +44,16 @@ public class proj : MonoBehaviour
             animasset = false;
         }
     }
-    private void OnTriggerStay2D(Collider2D other)
+    private IEnumerator damage()
     {
+        yield return new WaitForSeconds(1);
         Collider2D[] killzone = Physics2D.OverlapCircleAll(attackPos.position, range, pplayer);
+        for (int i = 0;i < killzone.Length; i++)
+        {
+            PauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+
+        }
     }
     void OnDrawGizmosSelected()
     {

@@ -265,6 +265,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1718363421}
+  - {fileID: 386931265}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &90028007
@@ -281,6 +282,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 90028003}
   animasset: 0
+  range: 0.5
+  attackPos: {fileID: 386931265}
+  pplayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &216629610
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 216629612}
   - component: {fileID: 216629611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -365,6 +371,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 574696037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &386931264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 386931265}
+  m_Layer: 0
+  m_Name: attackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &386931265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386931264}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 90028006}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574696035
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +417,7 @@ GameObject:
   - component: {fileID: 574696040}
   - component: {fileID: 574696041}
   - component: {fileID: 574696042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2578,7 +2615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644453821}
   - component: {fileID: 1644453822}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -8,6 +8,10 @@ public class proj : MonoBehaviour
 {
     public Animator anim;
     public bool animasset;
+    public float range;
+    public Transform attackPos;
+    public LayerMask pplayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +41,14 @@ public class proj : MonoBehaviour
             
             animasset = false;
         }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Collider2D[] killzone = Physics2D.OverlapCircleAll(attackPos.position, range, pplayer);
+    }
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, range);
     }
 }

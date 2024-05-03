@@ -17,6 +17,7 @@ public class proj : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        Debug.Log(Time.timeScale);
     }
 
     // Update is called once per frame
@@ -52,6 +53,7 @@ public class proj : MonoBehaviour
         {
             PauseMenu.SetActive(true);
             Time.timeScale = 0f;
+            Debug.Log(Time.timeScale);
 
         }
     }

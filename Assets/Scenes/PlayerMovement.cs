@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator animator;
     public float movementSpeed = 1f;
     private float x, y;
 
@@ -15,9 +16,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
  
     float currentDashTime;
+    private float spees;
  
     bool canDash = true;
     bool playerCollision = true;
+    bool space = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -31,8 +35,12 @@ public class PlayerMovement : MonoBehaviour
         // get input
         x = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
         y = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
+
+        
         
         transform.Translate(x, y, 0f);
+        animator.SetFloat("speed",(Input.GetAxis("Horizontal") * Input.GetAxis("Horizontal")) + (Input.GetAxis("Vertical") * Input.GetAxis("Vertical")));
+        animator.SetBool("dash",Input.GetKeyDown(KeyCode.Space));
 
         if (x != 0 || y != 0)
         {
@@ -44,21 +52,25 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
+                space = true;
                 StartCoroutine(Dash(Vector2.up));
             }
  
             else if (Input.GetKey(KeyCode.A))
             {
+                space = true;
                 StartCoroutine(Dash(Vector2.left));
             }
  
             else if (Input.GetKey(KeyCode.S))
             {
+                space = true;
                 StartCoroutine(Dash(Vector2.down));
             }
  
             else if (Input.GetKey(KeyCode.D))
             {
+                space = true;
                 StartCoroutine(Dash(Vector2.right));
             }
  
@@ -66,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 // Whatever you want.
             }
+            space = false;
  
         }
     }
